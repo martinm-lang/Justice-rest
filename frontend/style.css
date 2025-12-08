@@ -1,0 +1,432 @@
+/*
+===================================================
+  VOTRE CODE CSS ORIGINAL (INTACT)
+===================================================
+*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --var-background-color: #0e3630;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--var-background-color);
+  height: 50px;
+  margin: 30px 200px;
+  top: 30px;
+  border-radius: 50px;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  text-transform: uppercase;
+  gap: 50px;
+}
+
+a {
+  color: white;
+  font-family: "Anton", sans-serif;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.active {
+  background-color: white;
+  border-radius: 50px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+}
+
+.active a {
+  color: var(--var-background-color);
+}
+
+/*SYTLE CSS POUR PAGE ACCUEIL*/
+
+.container {
+  display: flex;
+  flex-direction: row;
+  padding: 30px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.text {
+  gap: 10px;
+  font-size: 15px;
+}
+
+.text h1 {
+  text-transform: uppercase;
+  font-size: 38px;
+}
+
+img {
+  height: 450px;
+}
+
+.pbmatique {
+  background-color: var(--var-background-color);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  color: white;
+  height: 200px;
+  padding: 40px;
+  line-height: 2;
+}
+
+.pbmatique p {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.podcast {
+  padding-top: 10px;
+  margin: 20px 90px;
+}
+
+.podcast h1 {
+  display: flex;
+  text-align: center;
+  color: var(--var-background-color);
+  font-size: 30px;
+}
+
+.podcast h3 {
+  text-transform: uppercase;
+}
+
+.lecturePodcast {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+
+.lecturePodcast h3 {
+  margin: 0;
+}
+button {
+  background-color: rgb(203, 2, 2);
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+}
+
+button i {
+  color: white;
+  border-radius: 40px;
+  font-size: 15px;
+}
+
+.infopodcast {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.image {
+  height: 220px;
+  width: 2000px;
+  background-color: bisque;
+}
+
+.textesupp {
+  padding-top: 8px;
+}
+
+.podcast p {
+  text-align: justify; /* Aligne à gauche et à droite */
+  hyphens: auto;
+}
+
+.imagepodcast {
+  height: 240px;
+  border-radius: 10px;
+  border: solid 3px #0e3630;
+}
+
+/*SYTLE CSS POUR PAGE PRÉSENTATION*/
+.presentation {
+  margin: 20px 90px;
+  padding-top: 50px;
+}
+
+.elements {
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+  gap: 50px;
+}
+.texte {
+  font-size: 18px;
+  text-align: justify; /* Aligne à gauche et à droite */
+  hyphens: auto;
+}
+.texte .nom {
+  font-size: 25px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+.imageprofil {
+  border-radius: 50%;
+  object-fit: cover;
+  height: 200px;
+  width: 200px;
+}
+
+.sujet {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sujet p {
+  font-size: 20px;
+}
+
+.sujettexte {
+  padding-top: 40px;
+  text-align: justify; /* Aligne à gauche et à droite */
+  hyphens: auto;
+  font-size: 20px;
+}
+
+/*
+===================================================
+  NOUVELLES RÈGLES D'EXTENSION ET D'UX (FULL-WIDTH SAUF NAV)
+===================================================
+*/
+
+:root {
+  /* Nouvelle couleur d'accent (vert clair) */
+  --color-secondary: #052906;
+  --color-text-dark: #333;
+  --color-page-background: #ffffff;
+  --color-active-bg: var(--var-background-color);
+}
+
+/* 1. Base et Corps */
+body {
+  background-color: var(--color-page-background);
+  color: var(--color-text-dark);
+  line-height: 1.7;
+}
+
+/* 2. Navigation : Utilise les marges 30px 200px originales. */
+nav {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  height: 60px;
+}
+
+.active {
+  border: 2px solid var(--color-active-bg);
+}
+
+/* 3. Définition du Contenu (Textes directement sur le fond) */
+.content-wrapper {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  max-width: 1250px;
+  margin: 40px auto;
+  padding: 0 40px;
+}
+
+/* 4. Typographie du Contenu */
+.content-wrapper h1 {
+  font-family: "Anton", sans-serif;
+  color: var(--var-background-color);
+  font-size: 3em;
+  text-align: left;
+  border-bottom: 2px solid #ddd;
+  padding-top: 20px;
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+  display: block;
+}
+
+.content-wrapper h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: var(--var-background-color);
+  font-size: 1.8em;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 0;
+}
+
+/* Soulignement stylisé pour h2 utilisant la nouvelle couleur verte */
+.content-wrapper h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  height: 3px;
+  width: 100px;
+  background-color: var(--color-secondary);
+}
+
+.content-wrapper p {
+  font-size: 1.1em;
+  text-align: justify;
+  margin-bottom: 25px;
+  line-height: 1.8;
+}
+
+/* 5. Style des Remerciements (MISE EN PAGE LINÉAIRE FORMELLE) */
+.remerciements-list,
+.remerciements ul {
+  /* Annulation de la mise en page en grille et retour à une liste standard */
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  background-color: transparent;
+  border: none;
+  display: block;
+  text-transform: none;
+  gap: 0;
+}
+
+.remerciements-list li,
+.remerciements ul li {
+  /* Chaque élément est un bloc vertical et formel */
+  margin-bottom: 15px;
+  padding: 0;
+  border-radius: 0;
+  background-color: transparent;
+  border-top: none;
+  position: relative;
+  padding-left: 20px; /* Espace pour la puce */
+  font-size: 1.1em;
+}
+
+.remerciements-list li::before,
+.remerciements ul li::before {
+  /* Puce ou tiret discret */
+  content: "— ";
+  color: var(--color-secondary);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.remerciements-list strong,
+.remerciements strong {
+  /* Les noms sont en gras et en ligne */
+  font-weight: 800;
+  color: var(--var-background-color);
+  margin-right: 5px;
+  display: inline;
+}
+
+.remerciements-list li p,
+.remerciements ul li p {
+  /* Style par défaut pour les paragraphes dans la liste (non utilisé pour la liste simple) */
+  margin: 0;
+  font-size: 1em;
+  line-height: 1.6;
+  color: var(--color-text-dark);
+}
+
+.note-technique {
+  font-style: italic;
+  font-size: 0.9em;
+  color: #666;
+  padding: 20px 0 40px 0;
+  border-top: 1px dashed #ccc;
+  text-align: left;
+}
+
+/* 6. Footer (Full-Width) */
+footer {
+  background-color: var(--var-background-color);
+  color: white;
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 60px;
+  width: 100%;
+}
+
+.social-links a {
+  color: white;
+}
+
+.social-links a:hover {
+  color: var(--color-secondary);
+}
+
+/* 7. Styles Page Accueil (Full-Width) */
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 30px;
+  justify-content: space-around;
+}
+
+.pbmatique {
+  width: 100%;
+}
+
+/* 8. Responsive (Adaptation mobile) */
+@media (max-width: 1250px) {
+  .content-wrapper {
+    max-width: 95%;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 900px) {
+  /* Surcharge de la nav pour le mobile */
+  nav {
+    margin: 20px;
+    height: auto;
+    border-radius: 20px;
+    padding: 15px 10px;
+  }
+
+  ul {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+}
