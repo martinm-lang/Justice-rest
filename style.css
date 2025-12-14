@@ -430,3 +430,299 @@ footer {
     flex-direction: column;
   }
 }
+
+/*
+===================================================
+  STYLES SPÉCIFIQUES POUR LA BIBLIOGRAPHIE
+===================================================
+*/
+
+/* Réinitialise le style de liste global qui est en flex-row */
+.biblio-list {
+  display: flex !important;
+  flex-direction: column !important; /* Empile les éléments verticalement */
+  gap: 15px !important;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+/* Style de l'élément de liste */
+.biblio-list li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* Le lien qui sert de carte */
+.biblio-link {
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f9f9;
+  border-left: 5px solid var(--var-background-color);
+  padding: 20px 25px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+
+  /* Surcharge importante des styles globaux 'a' */
+  text-decoration: none;
+  font-family: "Poppins", sans-serif !important; /* On ne veut pas Anton ici */
+  font-size: 16px !important; /* Taille plus lisible pour du texte */
+  color: var(--color-text-dark) !important; /* On force la couleur sombre */
+}
+
+/* Effet au survol */
+.biblio-link:hover {
+  background-color: white;
+  transform: translateX(10px); /* Décalage léger vers la droite */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-left-color: var(
+    --color-secondary
+  ); /* Change la bordure en vert clair */
+}
+
+/* Style du nom de l'auteur / Titre principal en gras */
+.biblio-title {
+  font-weight: 700;
+  font-size: 1.1em;
+  color: var(--var-background-color);
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Style du détail de la citation */
+.biblio-detail {
+  font-size: 0.95em;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Ajout d'une petite icône flèche CSS après le titre pour indiquer le lien */
+.biblio-link::after {
+  content: "→ Accéder à la ressource";
+  font-size: 0.8em;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 10px;
+  color: var(--color-secondary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.biblio-link:hover::after {
+  opacity: 1;
+}
+
+/*
+===================================================
+  STYLE NOTE DE BAS DE PAGE (CITATION ACCUEIL)
+===================================================
+*/
+
+.note-citation {
+  max-width: 900px; /* Moins large que le texte principal pour le centrer visuellement */
+  margin: 60px auto 30px auto; /* Espace important au-dessus, petit en dessous */
+  padding-top: 20px; /* Espace entre le trait et le texte */
+  border-top: 1px solid #ddd; /* Petit trait gris de séparation */
+
+  text-align: center; /* Centré */
+  color: #666; /* Gris foncé plutôt que noir pur */
+  font-size: 0.9em; /* Un peu plus petit que le corps de texte */
+  font-family: "Poppins", sans-serif;
+}
+
+.note-citation p {
+  margin: 0;
+  font-style: italic; /* Texte en italique */
+}
+
+.note-citation i {
+  color: var(
+    --var-background-color
+  ); /* Le petit guillemet aux couleurs du site */
+  margin-right: 8px;
+  font-size: 0.8em;
+  vertical-align: middle;
+}
+
+.note-citation em {
+  font-weight: 600; /* Met en valeur le nom de la revue "Intermédiés" */
+  font-style: normal;
+}
+
+/*
+=/*
+=/*
+
+/*
+===================================================
+  STYLES SPÉCIFIQUES POUR LA BIBLIOGRAPHIE
+===================================================
+*/
+
+/* Liste verticale */
+.biblio-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 15px !important;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.biblio-list li {
+  list-style: none;
+  width: 100%;
+}
+
+/* --- STYLE DE BASE (Commun aux liens et non-liens) --- */
+.biblio-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f9f9;
+  border-left: 5px solid var(--var-background-color);
+  padding: 20px 25px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+
+  /* Reset typographique */
+  text-decoration: none;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 16px !important;
+  color: var(--color-text-dark) !important;
+  width: 100%; /* S'assure que la div prend toute la largeur */
+}
+
+/* --- STYLE SPÉCIFIQUE POUR LES LIENS (Intéractif) --- */
+a.biblio-link {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Effets au survol UNIQUEMENT sur les liens */
+a.biblio-link:hover {
+  background-color: white;
+  transform: translateX(10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-left-color: var(--color-secondary); /* Vert clair */
+}
+
+/* Le texte "Accéder à la ressource" UNIQUEMENT sur les liens */
+a.biblio-link::after {
+  content: "→ Accéder à la ressource";
+  font-size: 0.8em;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 10px;
+  color: var(--color-secondary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+a.biblio-link:hover::after {
+  opacity: 1;
+}
+
+/* --- STYLE SPÉCIFIQUE POUR LES ÉLÉMENTS STATIQUES (Non interactif) --- */
+div.biblio-static {
+  cursor: default; /* Curseur normal */
+}
+
+/* Typography interne */
+.biblio-title {
+  font-weight: 700;
+  font-size: 1.1em;
+  color: var(--var-background-color);
+  margin-bottom: 5px;
+  display: block;
+}
+
+.biblio-detail {
+  font-size: 0.95em;
+  color: #555;
+  line-height: 1.5;
+}
+
+/*
+===================================================
+  STYLE SPÉCIFIQUE PAGE PRÉSENTATION
+===================================================
+*/
+
+/* 1. Style des paragraphes : Justifié et lisible */
+.texte-contenu p {
+  text-align: justify; /* Aligne à gauche ET à droite (bords droits) */
+  hyphens: auto; /* Coupe les mots proprement si besoin */
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 25px; /* Espace entre les paragraphes */
+}
+
+/* 2. L'image flottante (Ronde et à gauche) */
+.image-flottante {
+  float: left; /* -> C'EST ICI QUE ÇA SE JOUE : L'image flotte à gauche */
+  margin-right: 40px; /* Espace à droite de la photo pour ne pas coller le texte */
+  margin-bottom: 15px; /* Espace en bas avant que le texte ne passe dessous */
+
+  /* Style visuel de la photo */
+  height: 200px;
+  width: 200px;
+  border-radius: 50%; /* Photo ronde */
+  object-fit: cover;
+  border: 4px solid var(--var-background-color); /* Bordure verte aux couleurs du site */
+}
+
+/* 3. "Clearfix" : Assure que le conteneur englobe bien les éléments flottants */
+.bio-block::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* 4. Style pour le nom en gras au début */
+.premier-para strong {
+  display: block; /* Force le retour à la ligne après le nom */
+  margin-bottom: 10px;
+  font-family: "Anton", sans-serif;
+  font-size: 24px;
+  color: var(--var-background-color);
+}
+
+/* --- Styles pour la citation simple --- */
+.citation-simple {
+  margin: 40px auto;
+  padding: 0 40px;
+  text-align: center;
+  max-width: 900px;
+}
+
+.citation-simple p {
+  font-size: 24px;
+  font-family: "Anton", sans-serif;
+  color: var(--var-background-color);
+  margin-bottom: 10px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.auteur-citation {
+  font-size: 16px;
+  font-style: italic;
+  color: #666;
+  display: block;
+  margin-bottom: 40px;
+}
+
+/* Restauration du style original pour la citation */
+.sujet {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 30px; /* Petit ajout pour l'aération */
+}
+
+.sujet p {
+  font-size: 20px;
+  /* Utilise la police par défaut définie plus haut */
+}
